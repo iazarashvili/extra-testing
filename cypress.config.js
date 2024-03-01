@@ -22,8 +22,8 @@ module.exports = defineConfig({
       ThirdCorrectPassword:"Test1234",
 
       // Api urls
-      basket_api: 'https://basket.beta.extra.ge',
-      identity_api: 'https://identity.beta.extra.ge',
+      basket_api: 'https://basket.staging.extra.ge',
+      identity_api: 'https://identity.staging.extra.ge',
       base_url: "https://staging.extra.ge/"
     }
   },

@@ -22,6 +22,10 @@ describe('კალათის ფუნქციონალის ტეს�
             baseHelper.addItemToCartAndCheck(homePage.elements.firstSetItemAddToCartButton(), 1)
             checker.checkAddedProductToBasket(homePage.elements.firstItemPrice(), homePage.elements.firstItemName())
         });
+        
+        after('კალათის გასუფთავება', () => {
+            basketApi.emptyBasket()
+        })
     })
 })
 
@@ -46,5 +50,9 @@ describe('კალათის ფუნქციონალის ტეს�
             baseHelper.addItemToCartAndCheck(homePage.elements.firstSetItemAddToCartButton(), 1)
             checker.checkAddedProductToBasket(homePage.elements.firstItemPrice(), homePage.elements.firstItemName())
         });
+
+        after('კალათის გასუფთავება', () => {
+            basketApi.emptyBasket()
+        })
     })
 })

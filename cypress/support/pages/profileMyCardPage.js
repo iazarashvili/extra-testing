@@ -2,4 +2,4 @@ export class ProfileMyCardPage {
 
 }
 
-export const profileMyCardPage = new ProfileMyCardPage()
+export default new ProfileMyCardPage()

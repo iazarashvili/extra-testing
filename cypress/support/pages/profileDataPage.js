@@ -2,4 +2,4 @@ export class ProfileDataPage {
 
 }
 
-export const profileDataPage = new ProfileDataPage()
+export default new ProfileDataPage()

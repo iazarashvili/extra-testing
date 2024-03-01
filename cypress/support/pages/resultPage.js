@@ -2,4 +2,4 @@ export class ResultPage {
 
 }
 
-export const resultPage = new ResultPage()
+export default new ResultPage()

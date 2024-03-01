@@ -2,4 +2,4 @@ export class ProfileAddressPage {
 
 }
 
-export const profileAddressPage = new ProfileAddressPage()
+export default new ProfileAddressPage()

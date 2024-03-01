@@ -2,4 +2,4 @@ export class WishListPage {
 
 }
 
-export const wishListPage = new WishListPage()
+export default new WishListPage()

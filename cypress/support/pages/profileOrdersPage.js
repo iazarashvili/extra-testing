@@ -2,4 +2,4 @@ export class ProfileOrdersPage {
 
 }
 
-export const profileOrdersPage = new ProfileOrdersPage()
+export default new ProfileOrdersPage()

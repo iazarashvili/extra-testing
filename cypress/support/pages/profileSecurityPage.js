@@ -2,4 +2,4 @@ export class ProfileSecurityPage {
 
 }
 
-export const profileSecurityPage = new ProfileSecurityPage()
+export default new ProfileSecurityPage()

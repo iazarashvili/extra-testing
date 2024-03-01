@@ -1,5 +1,7 @@
 export class BasePage {
-
+    elements = {
+        signInButton: () => 'button i._x_icon-user-profile-1',
+    }
 }
 
-export const basePage = new BasePage()
+export default new BasePage()

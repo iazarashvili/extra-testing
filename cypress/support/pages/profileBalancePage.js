@@ -2,4 +2,4 @@ export class ProfilBalancePage {
 
 }
 
-export const profilBalancePage = new ProfilBalancePage()
+export default new ProfilBalancePage()

@@ -2,4 +2,4 @@ export class ItemDetailPage {
 
 }
 
-export const itemDetailPage = new ItemDetailPage()
+export default new ItemDetailPage()

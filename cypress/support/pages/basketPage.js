@@ -3,6 +3,8 @@ export class BasketPage {
         firstItemPrice: () => '[id="currentPrice_0"]',
         secondItemPrice: () => '[id="currentPrice_1"]',
 
+        firstItemHeartIcon: () => '[id="addWishList_0"]:eq(1)',
+
         firstItemDiscountedPrice: () => '[id="discountedPrice_0"]',
         secondItemDiscountedPrice: () => '[id="discountedPrice_1"]',
 

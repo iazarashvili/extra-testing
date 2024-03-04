@@ -2,7 +2,7 @@ import basePage from "../pages/basePage";
 import signInForm from "../pages/signInForm";
 import homePage from "../pages/homePage";
 import header from "../pages/header";
-import {homePageHelper} from '../helpers/homePageHelper'
+import { homePageHelper } from '../helpers/homePageHelper'
 
 export class BaseHelper {
 
@@ -62,6 +62,22 @@ export class BaseHelper {
         cy.get(header.elements.basketItemCount()).invoke('text').invoke('replace').then(($count) => {
             expect(parseInt($count)).be.eq(itemCount)
         })
+    }
+
+    addItemToWishListAndCheck(item, item_count) {
+        cy.get(item).click().wait(2000)
+        cy.get(header.elements.wishListItemCount(), { timeout: 6000 }).invoke('text').invoke('replace').then(($itemCount) => {
+            expect(parseInt($itemCount)).to.eq(item_count)
+        })
+    }
+
+    openBasket() {
+        cy.get(header.elements.basketButton()).click()
+    }
+
+    openWishList() {
+        cy.get(header.elements.wishListButton()).click()
+        cy.location('pathname').should('eq', '/wishlist').wait(2000)
     }
 
     scroolToTimedDeals(){

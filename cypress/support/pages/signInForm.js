@@ -1,5 +1,4 @@
 export class SignInForm {
-    
     elements = {
         userNameInput: () => "[formcontrolname=email] input",
         passwordInput: () => "[formcontrolname=password] input",

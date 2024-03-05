@@ -21,10 +21,37 @@ export class BaseHelper {
             cy.wait(4000)
           })
     }
-
     initialAuthorization(){
         cy.session("stagingaauth", () => {
             cy.viewport(1920, 1080)
+            cy.visit('')
+            cy.get('#username').type(Cypress.env('authUserName'));
+            cy.get('#password').type(Cypress.env('authPassword'));
+            cy.contains('Sign In').click();
+            cy.url().should('eq', Cypress.env('base_url'));
+            homePageHelper.white()
+          })
+    }
+
+    sessionAuthorizationMobile(userName, password){
+        cy.session("SessionAuthorization1", () => {
+            cy.viewport('iphone-x')
+            cy.visit('')
+            cy.get('#username').type(Cypress.env('authUserName'));
+            cy.get('#password').type(Cypress.env('authPassword'));
+            cy.contains('Sign In').click();
+            cy.url().should('eq', Cypress.env('base_url'));
+            baseHelper.clickSignInButton(basePage.elements.signInButton())
+            baseHelper.typeUserName(userName);
+            baseHelper.typeUserPassword(password)
+            baseHelper.clickSignInButton(signInForm.elements.signInButton())
+            cy.wait(4000)
+          })
+    }
+
+    initialAuthorizationMobile(){
+        cy.session("stagingaauth", () => {
+            cy.viewport('iphone-x')
             cy.visit('')
             cy.get('#username').type(Cypress.env('authUserName'));
             cy.get('#password').type(Cypress.env('authPassword'));
@@ -80,6 +107,11 @@ export class BaseHelper {
         cy.location('pathname').should('eq', '/wishlist').wait(2000)
     }
 
+    openProductDetailPage(itemName) {
+        cy.get(itemName).click()
+        cy.contains('გამყიდველი:', {timeout: 8000})
+    }
+
     scroolToTimedDeals(){
         cy.scrollTo(0, 400, { duration: 700 }).wait(1000)
     }
@@ -88,6 +120,9 @@ export class BaseHelper {
         cy.scrollTo(0, 1000, {duration: 1200}).wait(1000)
     }
 
+    responsiveScroolTimedDeals(){
+        cy.scrollTo(0, 500, {duration: 1000})
+    }
 }
 
 export const baseHelper = new BaseHelper()
